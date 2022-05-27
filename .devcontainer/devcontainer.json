@@ -51,9 +51,17 @@
       80,
       120
     ],
+    "window.autoDetectColorScheme": true,
+    "terminal.integrated.scrollback": 1000000,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "edk2-vscode.build.compiler": "GCC5",
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.default.cStandard": "gnu17",
+    "C_Cpp.default.cppStandard": "gnu++17",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64"
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -64,6 +72,8 @@
     "sudo apt update",
     "&&",
     "git submodule update --init",
+    "&&",
+    "pip install -r pip-requirements.txt",
     "&&",
     "make -C BaseTools"
   ],

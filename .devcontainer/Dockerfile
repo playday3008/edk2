@@ -17,7 +17,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         build-essential bison flex uuid-dev iasl nasm python-is-python3 make \
         gcc g++ \
         libc6-dev:i386 libx11-dev:i386 libxext-dev:i386 lib32gcc-11-dev \
-        clang llvm lld
+        clang clang-format clang-tidy llvm lld
 
 # Clean up
 RUN apt-get autoremove -y \
