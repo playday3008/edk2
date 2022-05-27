@@ -53,6 +53,7 @@
     ],
     "window.autoDetectColorScheme": true,
     "terminal.integrated.scrollback": 1000000,
+    "git.autofetch": true,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
     "redhat.telemetry.enabled": false,
