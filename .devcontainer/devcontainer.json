@@ -22,7 +22,8 @@
 	"13xforever.language-x86-64-assembly",
 	"VisualStudioExptTeam.vscodeintellicode",
 	"redhat.vscode-yaml",
-	"ms-vscode.makefile-tools"
+	"ms-vscode.makefile-tools",
+	"ZixuanWang.linkerscript"
 ],
 
   // Set *default* container specific settings.json values on container create.
@@ -75,7 +76,7 @@
     "&&",
     "git submodule update --init",
     "&&",
-    "pip install -r pip-requirements.txt",
+    "pip install -r pip-requirements.txt --upgrade",
     "&&",
     "make -C BaseTools"
   ],
@@ -87,5 +88,12 @@
     "github-cli": "latest",
     "fish": "latest",
     "python": "os-provided"
+  },
+
+  // Set GCC Cross-compilers prefixes
+  "remoteEnv":{
+    "GCC5_ARM_PREFIX": "arm-linux-gnueabihf-",
+    "GCC5_AARCH64_PREFIX": "aarch64-linux-gnu-",
+    "GCC5_RISCV64_PREFIX": "riscv64-unknown-elf-"
   }
 }
