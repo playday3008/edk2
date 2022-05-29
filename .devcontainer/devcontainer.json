@@ -64,22 +64,17 @@
     "C_Cpp.codeAnalysis.clangTidy.enabled": true,
     "C_Cpp.default.cStandard": "gnu17",
     "C_Cpp.default.cppStandard": "gnu++17",
-    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64"
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "makefile.makeDirectory": "BaseTools"
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": [
-    "sudo apt update",
-    "&&",
-    "git submodule update --init",
-    "&&",
-    "pip install -r pip-requirements.txt --upgrade",
-    "&&",
-    "make -C BaseTools"
-  ],
+  "postCreateCommand": "sudo apt update && git submodule update --init && pip install -r pip-requirements.txt --upgrade && make -C BaseTools",
+
+  "postAttachCommand": ". edksetup.sh",
 
   // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "vscode",
@@ -92,7 +87,7 @@
 
   // Set GCC Cross-compilers prefixes
   "remoteEnv":{
-    "GCC5_ARM_PREFIX": "arm-linux-gnueabihf-",
+    "GCC5_ARM_PREFIX": "arm-linux-gnueabi-",
     "GCC5_AARCH64_PREFIX": "aarch64-linux-gnu-",
     "GCC5_RISCV64_PREFIX": "riscv64-unknown-elf-"
   }

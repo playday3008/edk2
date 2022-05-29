@@ -15,7 +15,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y full-upgrade \
     && apt-get -y install \
         ccache build-essential bison flex uuid-dev iasl nasm python-is-python3 make qemu file \
-        gcc g++ gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf gcc-aarch64-linux-gnu g++-aarch64-linux-gnu gcc-riscv64-unknown-elf \
+        gcc g++ gcc-arm-linux-gnueabi g++-arm-linux-gnueabi gcc-aarch64-linux-gnu g++-aarch64-linux-gnu gcc-riscv64-unknown-elf \
         libc6-dev:i386 libx11-dev:i386 libxext-dev:i386 lib32gcc-11-dev \
         clang clang-format clang-tidy llvm lld lldb
 
